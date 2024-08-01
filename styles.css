@@ -1,0 +1,22 @@
+.outer-container{
+    display:flex;
+    justify-content: center;
+}
+
+.container{
+    display:flex;
+    justify-content: center;
+    border:1px solid black;
+}
+
+.header{
+    display:flex;
+    justify-content: center;
+    margin:16px;
+    gap:20px;
+}
+
+.square-div{
+    width:10px;
+    height:10px;
+}
