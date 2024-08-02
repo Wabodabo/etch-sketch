@@ -3,6 +3,8 @@ const width = window. innerWidth;
 
 const container = document.querySelector(".container");
 
+let size;
+
 function draw(size){
     
     let row;
@@ -22,12 +24,15 @@ function draw(size){
 
 function getSize(){
     let size = prompt("Please enter the size of the grid:");
+    if(size >100){
+        size = prompt("This is too large, please enter a number 100 or below");
+    }
     return size;
 }
 
 function createPage(){
     container.replaceChildren();
-    let size = getSize();
+    size = getSize();
     draw(size);
 }
 
