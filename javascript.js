@@ -3,7 +3,7 @@ const width = window. innerWidth;
 
 const container = document.querySelector(".container");
 
-let size;
+let size = 50;
 
 function draw(size){
     
@@ -41,10 +41,25 @@ function cleanPage(){
     draw(size);
 }
 
+function randomInt(max){
+    return Math.floor(Math.random()*(max+1));
+}
+function randomRGB(){  
+    let r = randomInt(255);
+    let g = randomInt(255);
+    let b = randomInt(255);
+
+    return `rgb(${r}, ${g}, ${b})`;
+
+}
+
 container.addEventListener("mousemove", (event)=>{
         let target = event.target;
 
         if(target.className != 'container'){
-            target.style.backgroundColor = 'red';
+            let color = randomRGB();    
+            target.style.backgroundColor = color;
+            target.style.opacity = String(Number(target.style.opacity)+0.3);
+            
         }
     });
